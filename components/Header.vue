@@ -1,92 +1,80 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg bg-primary navbar-dark fixed-top">
-      <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="~/assets/img/logo.png"
+            alt="Logo"
+            width="30"
+            height="35"
+            class="me-2"
+          />
+          <span>SMKN 4 TASIKMALAYA</span>
+        </a>
 
-        <img src="~/assets/img/logo.png" alt="Logo Sekolah" width="30" height="35" class="me-2">
-        <div style="color: white;">SMKN 4 TASIKMALAYA</div>
-
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <nuxt-link class="nav-link" to="../">BERANDA</nuxt-link>
+              <nuxt-link class="nav-link" to="/">Beranda</nuxt-link>
             </li>
-            <li class="nav-item dropdown" @click="toggleDropdown">
-              <nuxt-link class="nav-link dropdown-toggle" to="/profil" role="button">
-                PROFIL
-              </nuxt-link>
-              <ul class="dropdown-menu" :class="{ show: isDropdownOpen }">
-                  <li><nuxt-link class="dropdown-item" to="/profil">PROFIL</nuxt-link></li>
-                  <li><nuxt-link class="dropdown-item" to="/visi">VISI MISI</nuxt-link></li>
-                  <li><nuxt-link class="dropdown-item" to="/sejarah">SEJARAH</nuxt-link></li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Profil
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><nuxt-link class="dropdown-item" to="/profil">Profil</nuxt-link></li>
+                <li><nuxt-link class="dropdown-item" to="/visi">Visi Misi</nuxt-link></li>
+                <li><nuxt-link class="dropdown-item" to="/sejarah">Sejarah</nuxt-link></li>
               </ul>
             </li>
             <li class="nav-item">
-              <nuxt-link class="nav-link" to="/jurusan">JURUSAN</nuxt-link>
+              <nuxt-link class="nav-link" to="/jurusan">Jurusan</nuxt-link>
             </li>
             <li class="nav-item">
-              <nuxt-link class="nav-link" to="./eskul">EKSTRAKURIKULER</nuxt-link>
+              <nuxt-link class="nav-link" to="/eskul">Ekstrakurikuler</nuxt-link>
             </li>
             <li class="nav-item">
-              <nuxt-link class="nav-link" to="/galeri">GALERI</nuxt-link>
+              <nuxt-link class="nav-link" to="/galeri">Galeri</nuxt-link>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
     <nuxt />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'DefaultLayout',
-  data() {
-    return {
-      isDropdownOpen: false,
-    };
-  },
-  methods: {
-    toggleDropdown() {
-      this.isDropdownOpen = !this.isDropdownOpen;
-    },
-  },
+  name: "Navbar",
 };
 </script>
 
-<style scoped>
-
-.navbar {
-  padding: 10px 15px;
-  z-index: 1050;
-  width: 100%;
-}
-
-
-.fixed-top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-
-.navbar-brand img {
-  max-height: 35px;
-}
-
-
+<style>
 body {
-  padding-top: 70px;
+  padding-top: 70px; 
 }
-
-.nav-item.dropdown .dropdown-menu {
-  z-index: 1060;
+.navbar {
+  z-index: 1050; 
 }
 </style>
